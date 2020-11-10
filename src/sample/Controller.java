@@ -15,7 +15,7 @@ public class Controller {
     @FXML ListView listCasos;
     @FXML
     protected void initialize(){
-        listCasos.getItems().addAll("Ejercicio 1","Ejercicio 2","Validar contraseña (1 mayús, 1 minús, 1 número, 1 caracter de /_+-%#)");
+        listCasos.getItems().addAll("Ejercicio 1 (Empieza con _; no sigue p; tiene 3 o más letras o números; termina en q o w)","Ejercicio 2 (Empieza con +; tiene una o más letras)","Validar contraseña (Mínimo 1 mayús, 1 minús, 1 número, 1 caracter especial en cualquier orden)");
     }
     public void procesar(ActionEvent event){
         String texto=tfTexto.getText();
