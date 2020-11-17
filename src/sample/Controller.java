@@ -15,7 +15,7 @@ public class Controller {
     @FXML ListView listCasos;
     @FXML
     protected void initialize(){
-        listCasos.getItems().addAll("Ejercicio 1 (Empieza con _; no sigue p; tiene 3 o más letras o números; termina en q o w)","Ejercicio 2 (Empieza con +; tiene una o más letras)","Validar contraseña (Mínimo 1 mayús, 1 minús, 1 número, 1 caracter especial en cualquier orden)");
+        listCasos.getItems().addAll("Ejercicio 1 (Empieza con _; no sigue p; tiene 3 o más letras o números; termina en q o w)","Ejercicio 2 (Empieza con +; tiene una o más letras)","Validar contraseña (Mínimo 1 mayús, 1 minús, 1 número, 1 caracter especial en cualquier orden)","Palabra que no comience con B","Validar grupo (ISC-númeroA|B)","Validar palabra con _ en medio");
     }
     public void procesar(ActionEvent event){
         String texto=tfTexto.getText();
@@ -29,6 +29,15 @@ public class Controller {
                 break;
             case 2://Validar password
                 expresion="^(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[0-9]+)(?=.*[^\\w]+).*$";
+                break;
+            case 3://Palabra que no comience con B
+                expresion="[^B].*";
+                break;
+            case 4://Validar grupo (ISC-1B)
+                expresion="^(ISC)-([1-9])[A|B]$";
+                break;
+            case 5://Validar casa_perro
+                expresion="([A-Za-z],{1,})[_]([A-Za-z]{1,})";
                 break;
         }
         Pattern patron= Pattern.compile(expresion);
